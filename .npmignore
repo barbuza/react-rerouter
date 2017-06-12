@@ -7,6 +7,5 @@
 /tslint.json
 /tsconfig.json
 /examples
-/webpack.config.js
+/webpack.config.ts
 /tsconfig.prod.json
-/lib/*.spec.*

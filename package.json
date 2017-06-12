@@ -16,7 +16,9 @@
   },
   "devDependencies": {
     "@types/history": "^4.5.2",
+    "@types/html-webpack-plugin": "^2.28.0",
     "@types/jest": "^19.2.4",
+    "@types/node": "^7.0.29",
     "@types/path-to-regexp": "^1.7.0",
     "@types/react-dom": "^15.5.0",
     "@types/react-redux": "^4.4.42",
@@ -36,6 +38,7 @@
     "rimraf": "^2.6.1",
     "ts-jest": "^20.0.6",
     "ts-loader": "^2.1.0",
+    "ts-node": "^3.0.6",
     "tslint": "^5.4.3",
     "typescript": "^2.3.4",
     "webpack": "^2.6.1",

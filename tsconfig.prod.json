@@ -5,6 +5,8 @@
   },
   "exclude": [
     "node_modules",
-    "examples"
+    "examples",
+    "webpack.config.ts",
+    "src/*.spec.*"
   ]
 }
