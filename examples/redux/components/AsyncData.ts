@@ -14,6 +14,9 @@ export interface IAsyncDataClass<D, P> extends ComponentClass<IAsyncData<D> & P>
   fetchData(): Promise<D>;
 }
 
+/**
+ * check WrappedComponent due to react-redux behavior
+ */
 export function isAsyncDataComponent<D, P>(component: any): component is IAsyncDataClass<D, P> {
   const target = component.WrappedComponent || component;
   if (target.prototype instanceof AsyncDataComponent) {

@@ -1,16 +1,19 @@
-import { Promise } from "es6-promise";
 import * as React from "react";
 
 import { AsyncDataComponent, connectAsync } from "./AsyncData";
 
+interface IData {
+  promised: number;
+}
+
 @connectAsync
-export class Edit extends AsyncDataComponent<{ promised: number }, { id: string }> {
+export class Edit extends AsyncDataComponent<IData, { id: string }> {
 
   public static dataKey = "edit";
 
-  public static fetchData() {
-    return new Promise((resolve) => setTimeout(resolve, 1000))
-      .then(() => Math.random());
+  public static async fetchData(): Promise<IData> {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    return { promised: Math.random() };
   }
 
   public render() {

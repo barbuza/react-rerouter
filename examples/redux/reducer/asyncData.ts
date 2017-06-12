@@ -9,6 +9,10 @@ export interface IAsyncDataReducerState {
 }
 
 export function asyncData(state: IAsyncDataReducerState = {}, action: Action): IAsyncDataReducerState {
+
+  /**
+   * reset async data state for each component in routing tree on location change
+   */
   if (isSetRouterStateAction<IReactComponent>(action)) {
     for (const pair of action.payload.components) {
       const component = pair.component;
@@ -25,6 +29,9 @@ export function asyncData(state: IAsyncDataReducerState = {}, action: Action): I
     return state;
   }
 
+  /**
+   * set async data when `fetchData` promise is resolved
+   */
   if (isSetAsyncDataAction(action)) {
     return {
       ...state,

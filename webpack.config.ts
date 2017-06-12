@@ -4,7 +4,11 @@ import * as path from "path";
 export default {
   devtool: "sourcemap",
   entry: {
-    redux: "./examples/redux/index.tsx",
+    redux: [
+      "es6-promise/auto",
+      "es6-object-assign/auto",
+      "./examples/redux/index.tsx",
+    ],
   },
   module: {
     rules: [

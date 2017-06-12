@@ -1,7 +1,8 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "declaration": true
+    "declaration": true,
+    "lib": ["es5", "dom"]
   },
   "exclude": [
     "node_modules",
