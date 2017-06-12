@@ -1,8 +1,8 @@
 import * as React from "react";
-import { connect } from "react-redux";
-import { AsyncDataComponent } from "./AsyncData";
+import { AsyncDataComponent, connectAsync } from "./AsyncData";
 
-class EditComponent extends AsyncDataComponent<{ promised: number }, { id: string }> {
+@connectAsync
+export class Edit extends AsyncDataComponent<{ promised: number }, { id: string }> {
 
   public static dataKey = "edit";
 
@@ -24,7 +24,3 @@ class EditComponent extends AsyncDataComponent<{ promised: number }, { id: strin
   }
 
 }
-
-export const Edit: React.ComponentClass<object> = connect(AsyncDataComponent.mapProps(EditComponent.dataKey))(
-  EditComponent,
-);
