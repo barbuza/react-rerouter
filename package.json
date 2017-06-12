@@ -8,7 +8,7 @@
     "start": "webpack-dev-server",
     "precommit": "lint-staged",
     "test": "jest --coverage --no-cache",
-    "prepublishOnly": "rimraf lib && tslint --project tsconfig.json && jest --coverage && tsc -p tsconfig.prod.json"
+    "prepublishOnly": "rimraf lib && tslint --project tsconfig.json && jest --no-cache --coverage && tsc -p tsconfig.prod.json"
   },
   "lint-staged": {
     "*.ts": [
@@ -46,8 +46,10 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "@types/prop-types": "^15.0.0",
     "@types/react": "^15.0.0",
     "path-to-regexp": "^1.7.0",
+    "prop-types": "^15.0.0",
     "react": "^15.0.0",
     "tslib": "^1.7.1"
   },

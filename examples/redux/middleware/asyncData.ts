@@ -2,7 +2,7 @@ import { Action, Dispatch, MiddlewareAPI } from "redux";
 
 import { isSetRouterStateAction } from "../../../src";
 
-import { createSetAsyncDataAction } from "../actions/asyncData";
+import { createSetAsyncDataAction } from "../actions";
 import { isAsyncDataComponent } from "../components/AsyncData";
 import { IReduxState } from "../reducer";
 

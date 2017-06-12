@@ -19,7 +19,7 @@ export class Edit extends AsyncDataComponent<{ promised: number }, { id: string 
         edit {this.props.id}
         {this.props.loading ?
           <div>loading</div> :
-          <div>promised {this.props.data}</div>
+          <div>promised {this.props.data && this.props.data.promised}</div>
         }
       </div>
     );

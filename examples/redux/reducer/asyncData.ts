@@ -1,7 +1,7 @@
 import { Action } from "redux";
 
 import { IReactComponent, isSetRouterStateAction } from "../../../src";
-import { isSetAsyncDataAction } from "../actions/asyncData";
+import { isSetAsyncDataAction } from "../actions";
 import { IAsyncData, isAsyncDataComponent } from "../components/AsyncData";
 
 export interface IAsyncDataReducerState {

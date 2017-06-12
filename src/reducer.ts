@@ -1,4 +1,4 @@
-import { ISetRouterStateAction, isSetRouterStateAction } from "./actions";
+import { isSetRouterStateAction, Navigate } from "./actions";
 import { IComponentPair } from "./flatten";
 
 export interface IRouterReducerState<T> {
@@ -8,7 +8,7 @@ export interface IRouterReducerState<T> {
   params: { [key: string]: string | undefined };
 }
 
-export function createReducer<T>(navigate: (path: string, query: {}) => ISetRouterStateAction<T>) {
+export function createReducer<T>(navigate: Navigate<T>) {
   const initialState = navigate("/", {}).payload;
 
   return (state: IRouterReducerState<T> = initialState, action: { type: any }): IRouterReducerState<T> => {

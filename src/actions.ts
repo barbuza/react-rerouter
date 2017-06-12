@@ -35,7 +35,9 @@ export function locationChangeToState<T>(flatRoutes: Array<IFlatRoute<T>>,
   };
 }
 
-export function createNavigateAction<T>(route: IRoute<T>): (path: string, query: {}) => ISetRouterStateAction<T> {
+export type Navigate<T> = (path: string, query: {}) => ISetRouterStateAction<T>;
+
+export function createNavigateAction<T>(route: IRoute<T>): Navigate<T> {
   const flatRoutes = flatten(route);
   return (path: string, query: {}) => {
     return {
