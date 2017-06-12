@@ -9,3 +9,4 @@
 /examples
 /webpack.config.js
 /tsconfig.prod.json
+/lib/*.spec.*
