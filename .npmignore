@@ -9,3 +9,4 @@
 /examples
 /webpack.config.ts
 /tsconfig.prod.json
+/.travis.yml
