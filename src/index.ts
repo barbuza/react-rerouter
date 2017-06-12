@@ -1,4 +1,4 @@
-export { Router } from "./react";
+export { Router, IReactComponent, IReactRouterReducerState } from "./react";
 export { createReducer, IRouterReducerState } from "./reducer";
-export { route } from "./route";
-export { isSetRouterStateAction, SET_ROUTER_STATE, createNavigateAction } from "./actions";
+export { route, IRoute } from "./route";
+export { isSetRouterStateAction, SET_ROUTER_STATE, createNavigateAction, ISetRouterStateAction } from "./actions";

@@ -3,6 +3,7 @@
     "outDir": "lib",
     "target": "es3",
     "module": "commonjs",
+    "jsx": "react",
     "sourceMap": true,
     "moduleResolution": "node",
     "noImplicitReturns": true,
@@ -10,6 +11,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "declaration": true,
-    "importHelpers": true
-  }
+    "importHelpers": true,
+    "lib": ["es6", "dom"]
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

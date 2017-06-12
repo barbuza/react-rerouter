@@ -6,3 +6,6 @@
 /yarn.lock
 /tslint.json
 /tsconfig.json
+/examples
+/webpack.config.js
+/tsconfig.prod.json
