@@ -1,4 +1,5 @@
 import { Action } from "redux";
+
 import { IReactComponent, isSetRouterStateAction } from "../../../src";
 import { isSetAsyncDataAction } from "../actions/asyncData";
 import { IAsyncData, isAsyncDataComponent } from "../components/AsyncData";
@@ -9,7 +10,7 @@ export interface IAsyncDataReducerState {
 
 export function asyncData(state: IAsyncDataReducerState = {}, action: Action): IAsyncDataReducerState {
   if (isSetRouterStateAction<IReactComponent>(action)) {
-    for (const pair of action.state.components) {
+    for (const pair of action.payload.components) {
       const component = pair.component;
       if (isAsyncDataComponent(component)) {
         state = {
@@ -27,8 +28,8 @@ export function asyncData(state: IAsyncDataReducerState = {}, action: Action): I
   if (isSetAsyncDataAction(action)) {
     return {
       ...state,
-      [action.dataKey]: {
-        data: action.data,
+      [action.payload.dataKey]: {
+        data: action.payload.data,
         loading: false,
       },
     };

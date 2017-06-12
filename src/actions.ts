@@ -6,7 +6,7 @@ import { IRoute } from "./route";
 export const SET_ROUTER_STATE = "ROUTER_SET_STATE";
 
 export interface ISetRouterStateAction<T> {
-  state: IRouterReducerState<T>;
+  payload: IRouterReducerState<T>;
   type: typeof SET_ROUTER_STATE;
 }
 
@@ -39,7 +39,7 @@ export function createNavigateAction<T>(route: IRoute<T>): (path: string, query:
   const flatRoutes = flatten(route);
   return (path: string, query: {}) => {
     return {
-      state: locationChangeToState(flatRoutes, path, query),
+      payload: locationChangeToState(flatRoutes, path, query),
       type: SET_ROUTER_STATE,
     };
   };

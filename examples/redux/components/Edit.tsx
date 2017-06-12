@@ -1,4 +1,6 @@
+import { Promise } from "es6-promise";
 import * as React from "react";
+
 import { AsyncDataComponent, connectAsync } from "./AsyncData";
 
 @connectAsync

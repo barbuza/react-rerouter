@@ -2,8 +2,10 @@ import { Action } from "redux";
 export const SET_ASYNC_DATA = "SET_ASYNC_DATA";
 
 export interface ISetAsyncDataAction {
-  data: any;
-  dataKey: string;
+  payload: {
+    data: any;
+    dataKey: string;
+  };
   type: typeof SET_ASYNC_DATA;
 }
 
@@ -13,8 +15,10 @@ export function isSetAsyncDataAction(action: Action): action is ISetAsyncDataAct
 
 export function createSetAsyncDataAction(dataKey: string, data: any): ISetAsyncDataAction {
   return {
-    data,
-    dataKey,
+    payload: {
+      data,
+      dataKey,
+    },
     type: SET_ASYNC_DATA,
   };
 }

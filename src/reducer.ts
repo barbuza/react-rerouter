@@ -9,11 +9,11 @@ export interface IRouterReducerState<T> {
 }
 
 export function createReducer<T>(navigate: (path: string, query: {}) => ISetRouterStateAction<T>) {
-  const initialState = navigate("/", {}).state;
+  const initialState = navigate("/", {}).payload;
 
   return (state: IRouterReducerState<T> = initialState, action: { type: any }): IRouterReducerState<T> => {
     if (isSetRouterStateAction<T>(action)) {
-      return action.state;
+      return action.payload;
     }
 
     return state;

@@ -14,7 +14,7 @@ describe("actions", () => {
     );
 
     expect(navigate("/", {})).toEqual({
-      state: {
+      payload: {
         components: [
           { component: "layout", keys: [] },
           { component: "index", keys: [] },
@@ -27,7 +27,7 @@ describe("actions", () => {
     });
 
     expect(navigate("/page/foo", {})).toEqual({
-      state: {
+      payload: {
         components: [
           { component: "layout", keys: [] },
           { component: "page", keys: ["name"] },
@@ -41,7 +41,7 @@ describe("actions", () => {
     });
 
     expect(navigate("/page/foo/edit", {})).toEqual({
-      state: {
+      payload: {
         components: [
           { component: "layout", keys: [] },
           { component: "page", keys: ["name"] },

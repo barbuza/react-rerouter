@@ -20,6 +20,7 @@ module.exports = {
       },
     ],
   },
+  devtool: 'sourcemap',
   plugins: [
     new HtmlPlugin(),
   ],

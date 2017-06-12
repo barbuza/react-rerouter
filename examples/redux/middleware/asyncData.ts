@@ -9,7 +9,7 @@ import { IReduxState } from "../reducer";
 export function asyncDataMiddleware(api: MiddlewareAPI<IReduxState>) {
   return (next: Dispatch<IReduxState>) => (action: Action) => {
     if (isSetRouterStateAction(action)) {
-      for (const pair of action.state.components) {
+      for (const pair of action.payload.components) {
         const component = pair.component;
         if (isAsyncDataComponent(component)) {
           component.fetchData().then((data) => {

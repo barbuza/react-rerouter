@@ -1,6 +1,6 @@
-import * as React from "react";
-import { ComponentClass } from "react";
+import { ComponentClass, ComponentState, PureComponent } from "react";
 import { connect } from "react-redux";
+
 import { IReduxState } from "../reducer";
 
 export interface IAsyncData<T> {
@@ -10,6 +10,7 @@ export interface IAsyncData<T> {
 
 export interface IAsyncDataClass<D, P> extends ComponentClass<IAsyncData<D> & P> {
   dataKey: string;
+  new (props?: P, context?: any): AsyncDataComponent<P, ComponentState>;
   fetchData(): Promise<D>;
 }
 
@@ -27,7 +28,7 @@ export function isAsyncDataComponent<D, P>(component: any): component is IAsyncD
   return false;
 }
 
-export abstract class AsyncDataComponent<D, P = object, S = object> extends React.PureComponent<IAsyncData<D> & P, S> {
+export abstract class AsyncDataComponent<D, P = object, S = object> extends PureComponent<IAsyncData<D> & P, S> {
 
 }
 
