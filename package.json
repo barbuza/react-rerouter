@@ -8,9 +8,9 @@
     "start": "webpack-dev-server",
     "precommit": "lint-staged",
     "test": "jest --coverage --no-cache",
-    "lint": "tslint --project tsconfig.json",
+    "lint": "tslint --project tsconfig.json --type-check",
     "build": "rimraf lib && tsc -p tsconfig.prod.json",
-    "prepublishOnly": "rimraf lib && tslint --project tsconfig.json && jest --no-cache --coverage && tsc -p tsconfig.prod.json"
+    "prepublishOnly": "rimraf lib && tslint --project tsconfig.json --type-check && jest --no-cache --coverage && tsc -p tsconfig.prod.json"
   },
   "lint-staged": {
     "*.ts": [
