@@ -6,13 +6,15 @@ import { applyMiddleware, createStore } from "redux";
 import { createLogger } from "redux-logger";
 
 import { Router } from "../../src";
+
+import { asyncDataMiddleware } from "./middleware/asyncData";
 import { IReduxState, reducer } from "./reducer";
 import { navigate } from "./routes";
 
 const ConnectedRouter: React.ComponentClass<object> = connect((state: IReduxState) => state.router)(Router);
 
 const history = createHashHistory();
-const store = createStore(reducer, applyMiddleware(createLogger()));
+const store = createStore(reducer, applyMiddleware(asyncDataMiddleware, createLogger()));
 
 history.listen((location) => {
   store.dispatch(navigate(location.pathname, {}));
