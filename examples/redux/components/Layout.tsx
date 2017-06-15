@@ -1,14 +1,15 @@
 import * as React from "react";
 
 import { ActivityIndicator } from "./ActivityIndicator";
+import { Link } from "./Link";
 
 export const Layout: React.SFC<object> = (props) => (
   <div>
     <ActivityIndicator />
     <nav>
-      <a href="#/">home</a>
-      <a style={{ marginLeft: 10 }} href="#/user/alice">alice</a>
-      <a style={{ marginLeft: 10 }} href="#/user/bob">bob</a>
+      <Link to="/">home</Link>
+      <Link to="/user/alice">alice</Link>
+      <Link to="/user/bob">bob</Link>
     </nav>
     {props.children}
   </div>

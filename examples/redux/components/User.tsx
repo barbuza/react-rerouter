@@ -1,10 +1,12 @@
 import * as React from "react";
 
+import { Link } from "./Link";
+
 export const User: React.SFC<{ id: string }> = (props) => (
   <div>
     <nav>
-      <a href={`#/user/${props.id}`}>profile</a>
-      <a style={{ marginLeft: 10 }} href={`#/user/${props.id}/edit`}>edit</a>
+      <Link to={`/user/${props.id}`}>profile</Link>
+      <Link to={`/user/${props.id}/edit`}>edit</Link>
     </nav>
     {props.children}
   </div>
