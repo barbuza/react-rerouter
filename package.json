@@ -13,7 +13,7 @@
     "prepublishOnly": "rimraf lib && tslint --project tsconfig.json --type-check && jest --no-cache --coverage && tsc -p tsconfig.prod.json"
   },
   "lint-staged": {
-    "*.ts": [
+    "*.+(ts|tsx)": [
       "tslint"
     ]
   },
