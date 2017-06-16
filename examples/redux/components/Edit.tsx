@@ -1,11 +1,13 @@
 import * as React from "react";
 
 import { AsyncDataComponent, connectAsync } from "./AsyncData";
+import { loginRequired } from "./loginRequired";
 
 interface IData {
   promised: number;
 }
 
+@loginRequired
 @connectAsync
 export class Edit extends AsyncDataComponent<IData, { id: string }> {
 

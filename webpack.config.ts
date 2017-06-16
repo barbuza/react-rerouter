@@ -7,6 +7,7 @@ export default {
     redux: [
       "es6-promise/auto",
       "es6-object-assign/auto",
+      "es6-symbol/implement",
       "./examples/redux/index.tsx",
     ],
   },

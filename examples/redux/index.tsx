@@ -1,17 +1,14 @@
 import { createHashHistory } from "history";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { connect, Provider } from "react-redux";
+import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
 import { createLogger } from "redux-logger";
 
-import { Router } from "../../src";
-
+import { App } from "./components/App";
 import { asyncDataMiddleware } from "./middleware";
-import { IReduxState, reducer } from "./reducer";
+import { reducer } from "./reducer";
 import { navigate } from "./routes";
-
-const ConnectedRouter: React.ComponentClass<object> = connect((state: IReduxState) => state.router, () => ({}))(Router);
 
 const history = createHashHistory();
 const store = createStore(reducer, applyMiddleware(asyncDataMiddleware, createLogger()));
@@ -26,7 +23,7 @@ document.body.appendChild(root);
 
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter />
+    <App />
   </Provider>,
   root,
 );
